@@ -12,3 +12,6 @@ jobs:
         dotnet-version: '5.0.101'
     - name: build project
       run: dotnet build src/HelloWorld.sln
+    - name: test and collect coverage
+      run: dotnet test --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+      run: bash <(curl -s https://codecov.io/bash)
