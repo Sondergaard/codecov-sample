@@ -13,6 +13,6 @@ jobs:
     - name: build project
       run: dotnet build src/HelloWorld.sln
     - name: test and collect coverage
-      run: dotnet test --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+      run: dotnet test src/HelloWorld.Tests/HelloWorld.Tests.csproj --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
     - name: upload coverage
       run: bash <(curl -s https://codecov.io/bash)
