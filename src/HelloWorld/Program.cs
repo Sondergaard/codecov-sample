@@ -2,7 +2,7 @@
 
 namespace HelloWorld
 {
-    class Program
+    public class Program
     {
         private readonly ITextWriter _writer;
 
@@ -17,14 +17,14 @@ namespace HelloWorld
             prg.SayHello();
         }
 
-        private void SayHello()
+        public void SayHello()
         {
             _writer.WriteLine("Hello world");
         }
     }
 
 
-    internal interface ITextWriter
+    public interface ITextWriter
     {
         void WriteLine(string lineToWrite);
     }
