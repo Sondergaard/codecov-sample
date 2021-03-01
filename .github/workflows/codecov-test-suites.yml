@@ -15,4 +15,6 @@ jobs:
     - name: test and collect coverage
       run: dotnet test src/HelloWorld.Tests/HelloWorld.Tests.csproj --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
     - name: upload coverage
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       run: bash <(curl -s https://codecov.io/bash)
