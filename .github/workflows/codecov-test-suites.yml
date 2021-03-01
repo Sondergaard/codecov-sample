@@ -1,3 +1,14 @@
 name: Run Test Suites
 
 on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2 # Check out your repository
+      - name: Setup .NET Core
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '3.1.x'
+      - run: dotnet build src/HelloWorld.sln
