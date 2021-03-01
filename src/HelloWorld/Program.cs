@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace HelloWorld
+﻿namespace HelloWorld
 {
     public class Program
     {
@@ -22,19 +20,4 @@ namespace HelloWorld
             _writer.WriteLine("Hello world");
         }
     }
-
-
-    public interface ITextWriter
-    {
-        void WriteLine(string lineToWrite);
-    }
-
-    public class ConsoleTextWriter : ITextWriter
-    {
-        public void WriteLine(string lineToWrite)
-        {
-            Console.WriteLine(lineToWrite);
-        }
-    }
-    
 }
