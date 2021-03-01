@@ -29,7 +29,7 @@ namespace HelloWorld
         void WriteLine(string lineToWrite);
     }
 
-    internal class ConsoleTextWriter : ITextWriter
+    public class ConsoleTextWriter : ITextWriter
     {
         public void WriteLine(string lineToWrite)
         {
