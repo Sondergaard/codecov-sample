@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Moq;
 using Xunit;
@@ -32,6 +33,15 @@ namespace HelloWorld.Tests
             var input = new string('x', 1024);
             
             sut.WriteLine(input);
+        }
+
+        [Fact]
+        public void ExecuteProgram_Should_Not_Throw_Exception()
+        {
+            var prgType = typeof(Program);
+            var main = prgType.GetMethod("Main", BindingFlags.NonPublic | BindingFlags.Static);
+
+            main.Invoke(null, new object []{ null });
         }
     }
 }
